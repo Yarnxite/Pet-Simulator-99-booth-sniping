@@ -91,17 +91,17 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         type = Library.Directory.Pets[item]
 end)
 
-    if type.exclusiveLevel and gems <= 10000 and item ~= "Banana" and item ~= "Coin" then
+    if type.exclusiveLevel and gems <= 50000 and item ~= "Banana" and item ~= "Coin" then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
-    elseif item == "Titanic Christmas Present" and gems <= 25000 then
+    elseif item == "Titanic Christmas Present" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
-    elseif string.find(item, "Exclusive") and gems <= 25000 then
+    elseif string.find(item, "Exclusive") and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
