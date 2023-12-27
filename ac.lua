@@ -1,3 +1,4 @@
+local ostime = os.time()
 repeat wait() until game:IsLoaded()
 
 setfpscap(10)
@@ -6,7 +7,6 @@ local Booths_Broadcast = game:GetService("ReplicatedStorage").Network:WaitForChi
 local message1 = {}
 local Players = game:GetService('Players')
 local PlayerInServer = #Players:GetPlayers()
-local ostime = os.time()
 
 local function processListingInfo(uid, gems, item, version, shiny, amount, boughtFrom)
     local gemamount = game:GetService("Players").LocalPlayer.leaderstats["💎 Diamonds"].Value
@@ -34,7 +34,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
     end
     
     message1 = {
-        ['content'] = "ez",
+        ['content'] = "Sniper",
         ['embeds'] = {
             {
                 ['title'] = snipeMessage,
@@ -73,7 +73,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
     end)
     if success == false then
             local response = request({
-            Url = https://discord.com/api/webhooks/1115428381769609326/t1RtVGsSh8KqHWGL74GFSnqlZyY0xlj2uIJmEXVPqTfARZ0zYAVtBVwlgvEQ6n_K_zIb,
+            Url = webhook,
             Method = "POST",
             Headers = {
                 ["Content-Type"] = "application/json"
@@ -174,7 +174,7 @@ end
 
 while wait(0.1) do
     PlayerInServer = #Players:GetPlayers()
-    if PlayerInServer < 25 or os.time() >= ostime + 1080 then
+    if PlayerInServer < 25 or os.time() >= ostime + 1020 then
         jumpToServer()
         break
     end
@@ -184,4 +184,10 @@ while wait(0.1) do
             break
         end
     end
-end 
+    for i,v in pairs (game.Players:GetPlayers()) do
+        if v:IsInGroup(5060810) or v:IsInGroup(1200769) then
+            jumpToServer()
+            break
+        end
+    end
+end
