@@ -101,12 +101,12 @@ end)
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
-    elseif item == "Crystal Key: Upper Half" and gems <= 1000 then
+    elseif item == "Crystal Key: Upper Half" and gems <= 10000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
-    elseif item == "Crystal Key: Lower Half" and gems <= 1000 then
+    elseif item == "Crystal Key: Lower Half" and gems <= 10000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
