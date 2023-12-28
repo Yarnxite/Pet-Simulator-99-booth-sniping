@@ -159,7 +159,42 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
-        end       
+        end
+    elseif item == "Strength Charm" and gems <= 10000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "Glittering Charm" and gems <= 20000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "Diamonds Charm" and gems <= 10000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "Royalty Charm" and gems <= 50000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "Charm Stone" and gems <= 20000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "Fortune Flag" and gems <= 100 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "Clan Voucher" and gems <= 50000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end                   
     elseif item == "Titanic Christmas Present" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
