@@ -63,7 +63,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
     end
     
     local message1 = {
-        ['content'] = "xinjoenod1c and ethannod1ck",
+        ['content'] = "some random idiot/kid got scammed!!!!!",
         ['embeds'] = {
             {
                 ['title'] = snipeMessage,
@@ -145,6 +145,21 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         if boughtPet == true then
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
+    elseif item == "Small Christmas Present" and gems <= 100 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "Large Christmas Present" and gems <= 5000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end
+    elseif item == "X large Christmas Present" and gems <= 10000 then
+        local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
+        if boughtPet == true then
+            processListingInfo(uid, gems, item, version, shiny, amount, username)
+        end       
     elseif item == "Titanic Christmas Present" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
