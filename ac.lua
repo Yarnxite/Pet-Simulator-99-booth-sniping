@@ -54,46 +54,51 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
         amount = 1
     end
 
-    if boughtPet == true then
-	local webcolor = tonumber(0x33dd99)
-	local weburl = webhook
-    else
-	local webcolor = tonumber(0xff0000)
-	local weburl = webhookFail
-    end
+    if boughtPet then
+        local webcolor = tonumber(0x33dd99)
+        local weburl = webhook
+        if ping then 
+                local webContent = "<@".. userid ..">"
+            else
+            local webContent = ""
+        end
+        else
+        local webcolor = tonumber(0xff0000)
+        local weburl = webhookFail
+        end
     
-    local message1 = {
-        ['content'] = "@everyone some random kid got scammed!!!!!",
-        ['embeds'] = {
-            {
-                ['title'] = snipeMessage,
-                ["color"] = webcolor,
-                ["timestamp"] = DateTime.now():ToIsoDate(),
-                ['fields'] = {
-                    {
-                        ['name'] = "PRICE:",
-                        ['value'] = tostring(gems) .. " GEMS",
-                    },
-                    {
-                        ['name'] = "BOUGHT FROM:",
-                        ['value'] = tostring(boughtFrom),
-                    },
-                    {
-                        ['name'] = "AMOUNT:",
-                        ['value'] = tostring(amount),
-                    },
-                    {
-                        ['name'] = "REMAINING GEMS:",
-                        ['value'] = tostring(gemamount),
-                    },      
-                    {
-                        ['name'] = "PETID:",
-                        ['value'] = tostring(uid),
+        local message1 = {
+            ['content'] = webContent,
+            ['embeds'] = {
+                {
+                    ['title'] = snipeMessage,
+                    ["color"] = webcolor,
+                    ["timestamp"] = DateTime.now():ToIsoDate(),
+                    ['fields'] = {
+                        {
+                            ['name'] = "PRICE:",
+                            ['value'] = tostring(gems) .. " GEMS",
+                        },
+                        {
+                            ['name'] = "BOUGHT FROM:",
+                            ['value'] = tostring(boughtFrom),
+                        },
+                        {
+                            ['name'] = "AMOUNT:",
+                            ['value'] = tostring(amount),
+                        },
+                        {
+                            ['name'] = "REMAINING GEMS:",
+                            ['value'] = tostring(gemamount),
+                        },      
+                        {
+                            ['name'] = "PETID:",
+                            ['value'] = tostring(uid),
+                        },
                     },
                 },
-            },
+            }
         }
-    }
 
     local jsonMessage = http:JSONEncode(message1)
     local success, response = pcall(function()
@@ -123,126 +128,151 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     if type.exclusiveLevel and gems <= 50000 and item ~= "Banana" and item ~= "Coin" then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Crystal Key" and gems <= 10000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Crystal Key Upper Half" and gems <= 5000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Crystal Key Lower Half" and gems <= 5000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Spinny Wheel Ticket" and gems <= 1000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Small Christmas Present" and gems <= 100 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Large Christmas Present" and gems <= 5000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "X large Christmas Present" and gems <= 10000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Strength Charm" and gems <= 10000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Glittering Charm" and gems <= 20000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Diamonds Charm" and gems <= 10000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Royalty Charm" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Charm Stone" and gems <= 20000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Fortune Flag" and gems <= 100 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Clan Voucher" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = true
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Magnet Flag" and gems <= 50 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Toy Ball" and gems <= 10 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Toy Bone" and gems <= 10 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Squeaky Toy" and gems <= 10 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Large Gift Bag" and gems <= 500 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Hot Cocoa" and gems <= 10 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end                
     elseif item == "Titanic Christmas Present" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = true
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif string.find(item, "Exclusive") and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif type.huge and gems <= 2000000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = true
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end     
     elseif type.titanic and gems <= 10000000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
+            local ping = true
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     end
