@@ -55,10 +55,10 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
     end
 
     if boughtPet == true then
-	local webcolor = tonumber(33dd99)
+	local webcolor = 33dd99
 	local weburl = webhook
     else
-	local webcolor = tonumber(ff0000)
+	local webcolor = ff0000
 	local weburl = webhookFail
     end
     
