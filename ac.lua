@@ -58,47 +58,47 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
         local webcolor = tonumber(0x33dd99)
         local weburl = webhook
         if ping then 
-                local webContent = "<@".. userid ..">"
-            else
+            local webContent = "<@".. userid ..">"
+        else
             local webContent = ""
         end
-        else
+    else
         local webcolor = tonumber(0xff0000)
         local weburl = webhookFail
-        end
+    end
     
-        local message1 = {
-            ['content'] = webContent,
-            ['embeds'] = {
-                {
-                    ['title'] = snipeMessage,
-                    ["color"] = webcolor,
-                    ["timestamp"] = DateTime.now():ToIsoDate(),
-                    ['fields'] = {
-                        {
-                            ['name'] = "PRICE:",
-                            ['value'] = tostring(gems) .. " GEMS",
-                        },
-                        {
-                            ['name'] = "BOUGHT FROM:",
-                            ['value'] = tostring(boughtFrom),
-                        },
-                        {
-                            ['name'] = "AMOUNT:",
-                            ['value'] = tostring(amount),
-                        },
-                        {
-                            ['name'] = "REMAINING GEMS:",
-                            ['value'] = tostring(gemamount),
-                        },      
-                        {
-                            ['name'] = "PETID:",
-                            ['value'] = tostring(uid),
-                        },
+    local message1 = {
+        ['content'] = webContent,
+        ['embeds'] = {
+            {
+                ['title'] = snipeMessage,
+                ["color"] = webcolor,
+                ["timestamp"] = DateTime.now():ToIsoDate(),
+                ['fields'] = {
+                    {
+                        ['name'] = "PRICE:",
+                        ['value'] = tostring(gems) .. " GEMS",
+                    },
+                    {
+                        ['name'] = "BOUGHT FROM:",
+                        ['value'] = tostring(boughtFrom),
+                    },
+                    {
+                        ['name'] = "AMOUNT:",
+                        ['value'] = tostring(amount),
+                    },
+                    {
+                        ['name'] = "REMAINING GEMS:",
+                        ['value'] = tostring(gemamount),
+                    },      
+                    {
+                        ['name'] = "PETID:",
+                        ['value'] = tostring(uid),
                     },
                 },
-            }
+            },
         }
+    }
 
     local jsonMessage = http:JSONEncode(message1)
     local success, response = pcall(function()
@@ -194,7 +194,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Royalty Charm" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
-            local ping = true
+            local ping = false
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Charm Stone" and gems <= 20000 then
