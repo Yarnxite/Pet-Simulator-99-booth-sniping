@@ -194,7 +194,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Royalty Charm" and gems <= 50000 then
         local boughtPet, boughtMessage = game:GetService("ReplicatedStorage").Network.Booths_RequestPurchase:InvokeServer(playerid, uid)
         if boughtPet == true then
-            local ping = false
+            local ping = true
             processListingInfo(uid, gems, item, version, shiny, amount, username)
         end
     elseif item == "Charm Stone" and gems <= 20000 then
