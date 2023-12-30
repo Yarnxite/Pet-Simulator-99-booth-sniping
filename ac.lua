@@ -15,7 +15,7 @@ local playerID
 local vu = game:GetService("VirtualUser")
 Players.LocalPlayer.Idled:connect(function()
    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   task.wait(1)
+   task.wait(2)
    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 
