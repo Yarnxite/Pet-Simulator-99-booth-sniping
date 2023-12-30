@@ -155,7 +155,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Fortune Flag" and gems / amount <= 100 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Clan Voucher" and gems / amount <= 50000 then
+    elseif item == "Clan Voucher" and gems / amount <= 300000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Magnet Flag" and gems / amount <= 50 then
