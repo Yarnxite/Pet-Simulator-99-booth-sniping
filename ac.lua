@@ -76,7 +76,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
                     },
                     {
                         ['name'] = "BOUGHT FROM:",
-                        ['value'] = "||" .. tostring(boughtFrom) .. "||",
+                        ['value'] = "||" .. tostring(boughtFrom) .. "|| :clown: ",
                     },
                     {
                         ['name'] = "AMOUNT:",
