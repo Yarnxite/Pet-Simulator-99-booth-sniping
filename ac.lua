@@ -12,10 +12,14 @@ local ts = game:GetService("TeleportService")
 local rs = game:GetService("ReplicatedStorage")
 local playerID
 
+if not snipeNormalPets then
+    snipeNormalPets = false
+end
+
 local vu = game:GetService("VirtualUser")
 Players.LocalPlayer.Idled:connect(function()
    vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   task.wait(2)
+   task.wait(1)
    vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
 end)
 
@@ -29,74 +33,99 @@ end
 
 local function processListingInfo(uid, gems, item, version, shiny, amount, boughtFrom, boughtStatus, mention)
     local gemamount = Players.LocalPlayer.leaderstats["💎 Diamonds"].Value
-    local snipeMessage = Players.LocalPlayer.Name .. " just sniped a "
+    local snipeMessage ="||".. Players.LocalPlayer.Name .. "||"
     local weburl, webContent, webcolor
     if version then
         if version == 2 then
-            version = "Rainbow"
+            version = "Rainbow "
         elseif version == 1 then
-            version = "Golden"
+            version = "Golden "
         end
     else
-       version = "Normal"
+       version = ""
     end
-    
-    snipeMessage = snipeMessage .. version
-    
-    if shiny then
-        snipeMessage = snipeMessage .. " Shiny"
-    end
-    
-    snipeMessage = snipeMessage .. " " .. (item)
 
     if boughtStatus then
-	    webcolor = tonumber(0x33dd99)
+	    webcolor = tonumber(0x00ff00)
 	    weburl = webhook
+        snipeMessage = snipeMessage .. " just sniped a "
 	    if mention then 
             webContent = "<@".. userid ..">"
         else
 	        webContent = ""
 	    end
+	    if normalwebhook then
+	        weburl = normalwebhook
+	    end
     else
 	    webcolor = tonumber(0xff0000)
 	    weburl = webhookFail
+	    snipeMessage = snipeMessage .. " failed to snipe a "
     end
+    
+    snipeMessage = snipeMessage .. "**" .. version
+    
+    if shiny then
+        snipeMessage = snipeMessage .. " Shiny "
+    end
+    
+    snipeMessage = snipeMessage .. item .. "**"
     
     local message1 = {
         ['content'] = webContent,
         ['embeds'] = {
             {
+		["author"] = {
+			["name"] = "jinitaimei",
+			["icon_url"] = "https://cdn.discordapp.com/attachments/1110288162602889247/1190812131000602734/2508-praying-pepe.png?ex=65a32938&is=6590b438&hm=36d07574dbf3bdd924b2070f0268f01a971f22906bda5f6e2f6379e9cc2cecad&",
+		},
                 ['title'] = snipeMessage,
                 ["color"] = webcolor,
                 ["timestamp"] = DateTime.now():ToIsoDate(),
                 ['fields'] = {
                     {
-                        ['name'] = "PRICE:",
-                        ['value'] = tostring(gems) .. " GEMS",
+                        ['name'] = "__Price:__",
+                        ['value'] = tostring(gems) .. " 💎",
                     },
                     {
-                        ['name'] = "BOUGHT FROM:",
-                        ['value'] = "||" .. tostring(boughtFrom) .. "|| :clown: ",
+                        ['name'] = "__Bought from:__",
+                        ['value'] = "||"..tostring(boughtFrom).."|| ",
                     },
                     {
-                        ['name'] = "AMOUNT:",
-                        ['value'] = tostring(amount),
+                        ['name'] = "__Amount:__",
+                        ['value'] = tostring(amount) .. "x",
                     },
                     {
-                        ['name'] = "REMAINING GEMS:",
-                        ['value'] = tostring(gemamount),
+                        ['name'] = "__Remaining gems:__",
+                        ['value'] = tostring(gemamount) .. " 💎",
                     },      
                     {
-                        ['name'] = "PETID:",
-                        ['value'] = "||" .. tostring(uid) .. "||",
+                        ['name'] = "__PetID:__",
+                        ['value'] = "||"..tostring(uid).."||",
                     },
                 },
+		["footer"] = {
+                        ["icon_url"] = "https://cdn.discordapp.com/attachments/1110288162602889247/1190812131000602734/2508-praying-pepe.png?ex=65a32938&is=6590b438&hm=36d07574dbf3bdd924b2070f0268f01a971f22906bda5f6e2f6379e9cc2cecad&", -- optional
+                        ["text"] = "nimeikunkun :)"
+		}
             },
         }
     }
 
     local jsonMessage = http:JSONEncode(message1)
-    http:PostAsync(weburl, jsonMessage)
+    local success, webMessage = pcall(function()
+	http:PostAsync(weburl, jsonMessage)
+    end)
+    if success == false then
+        local response = request({
+            Url = weburl,
+            Method = "POST",
+            Headers = {
+                ["Content-Type"] = "application/json"
+            },
+            Body = jsonMessage
+        })
+    end
 end
 
 local function checklisting(uid, gems, item, version, shiny, amount, username, playerid)
