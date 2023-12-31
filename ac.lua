@@ -190,19 +190,28 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Magnet Flag" and gems / amount <= 50 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Toy Ball" and gems / amount <= 10 then
+    elseif item == "Toy Ball" and gems / amount <= 50 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Toy Bone" and gems / amount <= 10 then
+    elseif item == "Toy Bone" and gems / amount <= 50 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Squeaky Toy" and gems / amount <= 10 then
+    elseif item == "Squeaky Toy" and gems / amount <= 50 then
+        local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
+        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
+    elseif item == "Rainbow Fruit" and gems / amount <= 50 then
+        local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
+        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
+    elseif item == "Candycane" and gems / amount <= 50 then
+        local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
+        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
+    elseif item == "Christmas Cookie" and gems / amount <= 50 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Large Gift Bag" and gems / amount <= 500 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Hot Cocoa" and gems / amount <= 10 then
+    elseif item == "Hot Cocoa" and gems / amount <= 50 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)                
     elseif item == "Titanic Christmas Present" and gems / amount <= 50000 then
