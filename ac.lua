@@ -166,16 +166,16 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Chest Mimic" and gems <= 1000000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif class == "Charm" and gems <= 8000 then
+    elseif class == "Charms" and gems <= 8000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif class == "Potion" and gems / amount <= 100 then
+    elseif class == "Potions" and gems / amount <= 100 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif class == "Enchant" and gems / amount <= 300 then
+    elseif class == "Enchants" and gems / amount <= 300 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif class == "Fruit" and gems / amount <= 100 then
+    elseif class == "Fruits" and gems / amount <= 100 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Crystal Key Upper Half" and gems / amount <= 5000 then
