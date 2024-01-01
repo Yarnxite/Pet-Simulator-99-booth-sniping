@@ -148,7 +148,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Crystal Key" and gems / amount <= 10000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Fortune" and gems <= 1000000 then
+    elseif item == "Fortune" and gems <= 400000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Booth Slot Voucher" and gems <= 20000 then
@@ -187,16 +187,13 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Glittering" and gems <= 50000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Diamonds" and gems <= 10000 then
-        local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
-        processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Royalty" and gems <= 500000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Agility" and gems <= 100 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Coins" and gems <= 5000 then
+    elseif item == "Bonus" and gems <= 2000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Charm Stone" and gems / amount <= 40000 then
