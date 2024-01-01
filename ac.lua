@@ -193,7 +193,7 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
     elseif item == "Royalty Charm" and gems / amount <= 50000 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
-    elseif item == "Agility Charm" and gems / amount <= 100 then
+    elseif item == "Agility" and gems <= 100 then
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Charm Stone" and gems / amount <= 40000 then
