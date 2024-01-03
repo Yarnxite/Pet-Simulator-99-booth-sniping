@@ -79,9 +79,6 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
 			["name"] = "jinitaimei",
 			["icon_url"] = "https://cdn.discordapp.com/attachments/1110288162602889247/1190812131000602734/2508-praying-pepe.png?ex=65a32938&is=6590b438&hm=36d07574dbf3bdd924b2070f0268f01a971f22906bda5f6e2f6379e9cc2cecad&",
 		},
-        ['thumbnail'] = {
-            ['url'] = "https://cdn.discordapp.com/attachments/852970386038456411/1192230924285382736/OIP.png?ex=65a85292&is=6595dd92&hm=f613ce18a77f75d8be77b8604a12d0eb5968658e8d885363c7921ce07691989a&",
-        },
                 ['title'] = snipeMessage,
                 ["color"] = webcolor,
                 ["timestamp"] = DateTime.now():ToIsoDate(),
@@ -110,7 +107,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
 		["footer"] = {
                         ["icon_url"] = "https://cdn.discordapp.com/attachments/1110288162602889247/1190812131000602734/2508-praying-pepe.png?ex=65a32938&is=6590b438&hm=36d07574dbf3bdd924b2070f0268f01a971f22906bda5f6e2f6379e9cc2cecad&", -- optional
                         ["text"] = "nimeikunkun :)"
-		        }
+		}
             },
         }
     }
@@ -154,22 +151,22 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
             ping = true
         end
     elseif type.exclusiveLevel and price <= 50000 and item ~= "Banana" and item ~= "Coin" then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif string.find(item, "Exclusive") and price <= 50000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif type.titanic and price <= 10000000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             ping = true
         end
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Titanic Christmas Present" and price <= 50000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         if boughtPet == true then
             ping = true
@@ -177,135 +174,135 @@ local function checklisting(uid, gems, item, version, shiny, amount, username, p
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     -- Enchant Book
     elseif item == "Diamond Chest Mimic" and price <= 1500000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Chest Mimic" and price <= 1000000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Lucky Block" and price <= 400000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Super Lightning" and price <= 500000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Massive Comet" and price <= 800000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Fortune" and price <= 100000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     -- Charm
     elseif item == "Glittering" and price <= 50000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Royalty" and price <= 500000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Charm Stone" and price <= 40000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Strength" and price <= 10000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Agility" and price <= 100 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Bonus" and price <= 2000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     -- Present/Gift
     elseif item == "X-large Christmas Present" and price <= 10000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Large Christmas Present" and price <= 5000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Medium Christmas Present" and price <= 500 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Small Christmas Present" and price <= 100 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Large Gift Bag" and price <= 500 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     -- Misc
     elseif item == "Clan Voucher" and price <= 100000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Crystal Key" and price <= 10000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Booth Slot Voucher" and price <= 10000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Crystal Key Upper Half" and price <= 5000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Crystal Key Lower Half" and price <= 2500 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Spinny Wheel Ticket" and price <= 1000 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     -- Random
     elseif item == "Fortune Flag" and price <= 100 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Magnet Flag" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Toy Ball" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Toy Bone" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Squeaky Toy" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Rainbow Fruit" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Candycane" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Christmas Cookie" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)
     elseif item == "Hot Cocoa" and price <= 50 then
-        task.wait(3.05)
+        task.wait(3)
         local boughtPet, boughtMessage = purchase:InvokeServer(playerid, uid)
         processListingInfo(uid, gems, item, version, shiny, amount, username, boughtPet, ping)     
     end
