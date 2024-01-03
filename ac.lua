@@ -75,13 +75,10 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
         ['content'] = webContent,
         ['embeds'] = {
             {
-		        ["author"] = {
-			        ["name"] = "jinitaimei",
-			        ["icon_url"] = "https://cdn.discordapp.com/attachments/1110288162602889247/1190812131000602734/2508-praying-pepe.png?ex=65a32938&is=6590b438&hm=36d07574dbf3bdd924b2070f0268f01a971f22906bda5f6e2f6379e9cc2cecad&",
-		        },
-                ['thumbnail'] = {
-                    ['url'] = https://cdn.discordapp.com/attachments/852970386038456411/1192230924285382736/OIP.png?ex=65a85292&is=6595dd92&hm=f613ce18a77f75d8be77b8604a12d0eb5968658e8d885363c7921ce07691989a&
-                },
+		["author"] = {
+			["name"] = "jinitaimei",
+			["icon_url"] = "https://cdn.discordapp.com/attachments/1110288162602889247/1190812131000602734/2508-praying-pepe.png?ex=65a32938&is=6590b438&hm=36d07574dbf3bdd924b2070f0268f01a971f22906bda5f6e2f6379e9cc2cecad&",
+		},
                 ['title'] = snipeMessage,
                 ["color"] = webcolor,
                 ["timestamp"] = DateTime.now():ToIsoDate(),
@@ -107,10 +104,10 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
                         ['value'] = "||"..tostring(uid).."||",
                     },
                 },
-		        ["footer"] = {
+		["footer"] = {
                         ["icon_url"] = "https://cdn.discordapp.com/attachments/1110288162602889247/1190812131000602734/2508-praying-pepe.png?ex=65a32938&is=6590b438&hm=36d07574dbf3bdd924b2070f0268f01a971f22906bda5f6e2f6379e9cc2cecad&", -- optional
-                        ["text"] = "nimeikunkun:)"
-		        }
+                        ["text"] = "nimeikunkun :)"
+		}
             },
         }
     }
