@@ -70,8 +70,8 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
         ['embeds'] = {
             {
 		["author"] = {
-			["name"] = "Look who got scammed",
-			["icon_url"] = "https://cdn.discordapp.com/attachments/852970386038456411/1192230924285382736/OIP.png?ex=65a85292&is=6595dd92&hm=f613ce18a77f75d8be77b8604a12d0eb5968658e8d885363c7921ce07691989a&",
+			["name"] = "Look who got scammed 🤡",
+			["icon_url"] = "https://cdn.discordapp.com/emojis/1179513460594319380.webp?size=48&name=thumbs_up&quality=lossless",
 		},
                 ['title'] = snipeMessage,
                 ["color"] = webcolor,
@@ -99,7 +99,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
                     },
                 },
 		["footer"] = {
-                        ["icon_url"] = "https://cdn.discordapp.com/attachments/852970386038456411/1192230924285382736/OIP.png?ex=65a85292&is=6595dd92&hm=f613ce18a77f75d8be77b8604a12d0eb5968658e8d885363c7921ce07691989a&", -- optional
+                        ["icon_url"] = "https://cdn.discordapp.com/emojis/1179513460594319380.webp?size=48&name=thumbs_up&quality=lossless", -- optional
                         ["text"] = ":)"
 		}
             },
