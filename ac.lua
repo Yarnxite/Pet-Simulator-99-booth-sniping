@@ -213,7 +213,7 @@ Booths_Broadcast.OnClientEvent:Connect(function(username, message)
                 return
 
                 -- Enchants    
-            elseif class == "Enchant" and unitGems <= 30000 then
+            elseif class == "Enchant" then
                 if item == "Chest Breaker" and unitGems <= 10000000 then
                     coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                     return
