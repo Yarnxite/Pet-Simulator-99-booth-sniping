@@ -232,7 +232,7 @@ Booths_Broadcast.OnClientEvent:Connect(function(username, message)
                 elseif item == "Lucky Block" and unitGems <= 200000 then
                     coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                     return
-                elseif item == "Fortune" and unitGems <= 1000000 then
+                elseif item == "Fortune" and unitGems <= 100000 then
                     coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                     return
                 elseif item == "Massive Comet" and unitGems <= 500000 then
