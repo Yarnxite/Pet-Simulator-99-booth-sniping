@@ -33,7 +33,7 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
     local weburl, webContent, webcolor, webStatus
     local versionVal = { [1] = "Golden ", [2] = "Rainbow " }
     local versionStr = versionVal[version] or (version == nil and "")
-    local mention = (Library.Directory.Pets[item].huge or Library.Directory.Pets[item].titanic or Library.Directory.Pets[item]) and "<@" .. userid .. ">" or ""
+    local mention = (Library.Directory.Pets[item].huge or Library.Directory.Pets[item].titanic) and "<@" .. userid .. ">" or ""
 
     if boughtStatus then
         webcolor = tonumber(0x00ff00)
