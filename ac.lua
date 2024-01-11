@@ -167,6 +167,7 @@ Booths_Broadcast.OnClientEvent:Connect(function(username, message)
             local playerid = message['PlayerID']
             local class = tostring(listing["ItemData"]["class"])
             local unitGems = gems/amount
+            local type = Library.Directory.Pets[item]
             snipeNormal = false
 
             if string.find(item, "Huge") and unitGems <= 1000000 then
