@@ -30,7 +30,7 @@ creditsLabel.BackgroundColor3 = Color3.new(0.176471, 0.176471, 0.176471)
 creditsLabel.Position = UDim2.new(0, 0, 0.800455689, 0)
 creditsLabel.Size = UDim2.new(0, 370, 0, 21)
 creditsLabel.Font = Enum.Font.Arial
-creditsLabel.Text = "Made by luca#5432"
+creditsLabel.Text = "Made by akira0505"
 creditsLabel.TextColor3 = Color3.new(0, 1, 1)
 creditsLabel.TextSize = 20
 
